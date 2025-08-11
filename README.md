@@ -2,6 +2,10 @@
 
 A comprehensive Angular library for comparing two user profiles side-by-side with AI-powered similarity analysis and rich interactive features.
 
+## Demo
+
+![Demo Video](./demo.gif)
+
 ##  Features
 
 - **Side-by-side Profile Comparison**: Clean, responsive layout for comparing two user profiles
