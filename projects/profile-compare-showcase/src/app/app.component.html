@@ -1,0 +1,118 @@
+<div class="showcase-container">
+  <!-- Header -->
+  <header class="showcase-header">
+    <h1>{{ title }}</h1>
+    <p class="subtitle">A comprehensive Angular library for comparing user profiles with AI-powered similarity analysis</p>
+  </header>
+
+  <!-- Demo Controls -->
+  <div class="demo-controls">
+    <h2>Demo Controls</h2>
+    <div class="controls-grid">
+      <div class="control-item">
+        <label class="toggle-switch">
+          <input type="checkbox" [checked]="config.enableTextSimilarity" (change)="toggleTextSimilarity()">
+          <span class="slider"></span>
+        </label>
+        <span class="control-label">Text Similarity API</span>
+        <small class="control-description">Analyzes and sorts interests by similarity scores</small>
+</div>
+
+      <div class="control-item">
+        <label class="toggle-switch">
+          <input type="checkbox" [checked]="config.enableFaceDetection" (change)="toggleFaceDetection()">
+          <span class="slider"></span>
+        </label>
+        <span class="control-label">Face Detection API</span>
+        <small class="control-description">Aligns profile pictures by detected face positions</small>
+      </div>
+    </div>
+  </div>
+
+  <!-- Profile Comparison Component -->
+  <div class="demo-section">
+    <h2>Profile Comparison Demo</h2>
+    <p class="demo-description">
+      The component below demonstrates side-by-side profile comparison with interactive features.
+      Click the "View Profile" buttons to see the output events in action.
+    </p>
+    
+    <!-- Profile Message Display -->
+    <div class="profile-message" *ngIf="profileMessage" [@fadeInOut]>
+      <div class="message-content">
+        <span class="message-icon">🎉</span>
+        <span class="message-text">{{ profileMessage }}</span>
+      </div>
+    </div>
+
+    <!-- The actual profile comparison component -->
+    <pc-profile-comparison
+      [user1]="user1"
+      [user2]="user2"
+      [referenceInterests]="referenceInterests"
+      [config]="config"
+      (viewProfile1)="onViewProfile1()"
+      (viewProfile2)="onViewProfile2()">
+    </pc-profile-comparison>
+  </div>
+
+  <!-- Features Section -->
+  <div class="features-section">
+    <h2>Library Features</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🔍</div>
+        <h3>Text Similarity Analysis</h3>
+        <p>Uses API Ninjas Text Similarity API to compare and rank interests by similarity scores</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">👁️</div>
+        <h3>Face Detection Alignment</h3>
+        <p>Automatically aligns profile pictures using face detection for better visual comparison</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">📱</div>
+        <h3>Responsive Design</h3>
+        <p>Fully responsive layout that works seamlessly on desktop and mobile devices</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">🎨</div>
+        <h3>Rich Animations</h3>
+        <p>Smooth Angular animations and transitions for enhanced user experience</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <h3>High Performance</h3>
+        <p>OnPush change detection strategy and optimized rendering for maximum performance</p>
+  </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🧪</div>
+        <h3>Well Tested</h3>
+        <p>Comprehensive test suite with Jest ensuring reliability and maintainability</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Usage Example -->
+  <div class="usage-section">
+    <h2>Usage Example</h2>
+    <div class="code-example">
+      <pre><code>{{usageExample}}</code></pre>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="showcase-footer">
+    <p>&copy; 2024 Profile Compare Library. Built with Angular {{ angularVersion }}</p>
+    <div class="footer-links">
+      <a href="#" class="footer-link">Documentation</a>
+      <a href="#" class="footer-link">GitHub</a>
+      <a href="#" class="footer-link">NPM</a>
+        </div>
+  </footer>
+</div>
